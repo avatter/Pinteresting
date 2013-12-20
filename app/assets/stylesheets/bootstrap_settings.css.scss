@@ -1,0 +1,34 @@
+@import url(http://fonts.googleapis.com/css?family=Cabin:400,700);
+
+
+
+
+$body-bg: #34495e;
+$font-family-sans-serif: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+$jumbotron-bg: white;
+$navbar-default-bg: #2c3e50;
+$navbar-default-color: white;
+$navbar-default-link-color: white;
+$navbar-default-link-hover-color: #bdc3c7;
+
+
+@import 'bootstrap';
+
+
+
+.center {
+     text-align: center;
+}
+
+.navbar-brand {
+     font-weight: bold;
+}
+
+
+
+
+
+
+
+
