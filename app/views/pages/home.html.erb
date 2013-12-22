@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <h1>Hi, schön dich zu sehen!</h1>
-  		<p>Jetzt anmelden: </p>
+  		
   		
   		
   		
@@ -8,9 +8,10 @@
   	 <% if user_signed_in? %>
           # do something
      <% else %>
+  		<p>Jetzt anmelden: </p>
   		<p><%= link_to "Neues Konto", new_user_registration_path, class:"btn btn-primary 		btn-lg" %>   </p>
-  		<%= link_to "Sign in", new_user_session_path , class:"btn btn-primary 		btn-lg"%>
-  		
+  		<%= link_to "Sign in", new_user_session_path , class:"btn btn-primary btn-lg"%> 
+
   		
   		<% end %>  
  
