@@ -5,7 +5,8 @@
 
 $body-bg: #2980b9;
 $font-family-sans-serif: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
+$font-size-base: 14px;
+$jumbotron-padding: 10px;
 $jumbotron-bg: white;
 $navbar-default-bg: #2c3e50;
 $navbar-default-color: white;
@@ -18,14 +19,19 @@ $navbar-default-link-hover-color: #bdc3c7;
 
 
 .center {
-     text-align: center;
+	text-align: center;
 }
 
 .navbar-brand {
-     font-weight: bold;
+	font-weight: bold;
 }
 
 
+
+.impressum {
+	font-size: 14px;
+	text-align: right;
+}
 
 
 
