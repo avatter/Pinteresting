@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Strasse:</strong>
+  <%= @adress.strasse %>
+</p>
+
+<p>
+  <strong>Hausnummer:</strong>
+  <%= @adress.hausnummer %>
+</p>
+
+<p>
+  <strong>Plz:</strong>
+  <%= @adress.plz %>
+</p>
+
+<p>
+  <strong>Stadt:</strong>
+  <%= @adress.stadt %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @adress.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @adress.longitude %>
+</p>
+
+
+
+<%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adress.latitude}%2C#{@adress.longitude}", class: "img-rounded" %>
+<%= image_tag "http://maps.googleapis.com/maps/api/streetview?size=450x300&location=#{@adress.latitude}%2C#{@adress.longitude}&heading=235&sensor=false", class: "img-rounded"  %>
+<p>
+
+
+<%= link_to 'Edit', edit_adress_path(@adress) %> |
+<%= link_to 'Back', adresses_path %>

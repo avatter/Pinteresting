@@ -1,4 +1,6 @@
 Pinteresting::Application.routes.draw do
+  resources :adresses
+
   devise_for :users
   get "pages/git"
   get "pages/add"
