@@ -1,4 +1,11 @@
-<%= form_for(@adress) do |f| %>
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+<h1>Lege deine Location an</h1>
+  </div>
+  <div class="panel-body">
+ <%= form_for(@adress) do |f| %>
   <% if @adress.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@adress.errors.count, "error") %> prohibited this adress from being saved:</h2>
@@ -10,25 +17,40 @@
       </ul>
     </div>
   <% end %>
+      <div class="form-group">
+        <%= f.label :strasse %>
+        <%= f.text_field :strasse, autofocus: true, class: "form-control" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :strasse %><br>
-    <%= f.text_field :strasse %>
-  </div>
-  <div class="field">
-    <%= f.label :hausnummer %><br>
-    <%= f.text_field :hausnummer %>
-  </div>
-  <div class="field">
-    <%= f.label :plz %><br>
-    <%= f.text_field :plz %>
-  </div>
-  <div class="field">
-    <%= f.label :stadt %><br>
-    <%= f.text_field :stadt %>
-  </div>
-  
-  <div class="actions">
+      <div class="form-group">
+        <%= f.label :hausnummer %>
+        <%= f.text_field :hausnummer, class: "form-control" %>
+      </div>
+
+       <div class="form-group">
+        <%= f.label :Postleitzahl %>
+        <%= f.text_field :plz, class: "form-control" %>
+      </div>
+
+       <div class="form-group">
+        <%= f.label :Stadt %>
+        <%= f.text_field :stadt, class: "form-control" %>
+      </div>
+
+      <div class="actions">
     <%= f.submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+
+  <div class="panel-footer">
+<%= link_to 'Back', adresses_path %>  
+</div>
+</div>
+
+
+  
+
+
+
+
