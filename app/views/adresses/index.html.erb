@@ -1,4 +1,7 @@
 <div class="jumbotron">
+ 
+<% if user_signed_in? %>
+
   <h1>Location-Übersicht</h1>
 <br>
 <p>
@@ -11,6 +14,7 @@
       <th>Stadt</th>
       <th>Latitude</th>
       <th>Longitude</th>
+      <th>Mail-Adresse</th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,9 +30,10 @@
         <td><%= adress.stadt %></td>
         <td><%= adress.latitude %></td>
         <td><%= adress.longitude %></td>
-        <td><%= link_to 'Show', adress %></td>
-        <td><%= link_to 'Edit', edit_adress_path(adress) %></td>
-        <td><%= link_to 'Destroy', adress, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= adress.user.email if adress.user %></td>
+        <td><%= link_to 'Anzeigen', adress %></td>
+        <td><%= link_to 'Ändern', edit_adress_path(adress) %></td>
+        <td><%= link_to 'Löschen', adress, method: :delete, data: { confirm: 'Bist du sicher, dass du das tun möchtest?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +43,16 @@
 <br>
 
 <%= link_to 'Neue Location anlegen', new_adress_path, class:"btn btn-primary     btn-lg"  %>
+
+
+ <% else %>
+
+ <p>Jetzt anmelden: </p>
+      <p><%= link_to "Neues Konto", new_user_registration_path, class:"btn btn-primary    btn-lg" %>   </p>
+      <%= link_to "Sign in", new_user_session_path , class:"btn btn-primary btn-lg"%> 
+
+      
+      <% end %>  
+ 
+  
 </div>

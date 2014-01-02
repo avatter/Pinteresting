@@ -1,10 +1,14 @@
 class AdressesController < ApplicationController
   before_action :set_adress, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!, except: [:index, :show]
+#before_action :correct_user, only: [:edit, :update, :destroy]
+ 
 
   # GET /adresses
   # GET /adresses.json
   def index
     @adresses = Adresse.all
+    #@adresses = Adresse.to_a
   end
 
   # GET /adresses/1
@@ -14,6 +18,7 @@ class AdressesController < ApplicationController
 
   # GET /adresses/new
   def new
+    #@adress = current_user.adresses.build
     @adress = Adresse.new
   end
 
@@ -24,11 +29,16 @@ class AdressesController < ApplicationController
   # POST /adresses
   # POST /adresses.json
   def create
+    
     @adress = Adresse.new(adress_params)
+    @adress.user_id = current_user.id
+
+    #adress = Adresse.new(adress_params)
+    #adress = current_user.adresses.build(adress_params)
 
     respond_to do |format|
       if @adress.save
-        format.html { redirect_to @adress, notice: 'Adresse was successfully created.' }
+        format.html { redirect_to @adress, notice: 'Location wurde erstellt.' }
         format.json { render action: 'show', status: :created, location: @adress }
       else
         format.html { render action: 'new' }
@@ -42,7 +52,7 @@ class AdressesController < ApplicationController
   def update
     respond_to do |format|
       if @adress.update(adress_params)
-        format.html { redirect_to @adress, notice: 'Adresse was successfully updated.' }
+        format.html { redirect_to @adress, notice: 'Location wurde angepasst.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

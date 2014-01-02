@@ -11,7 +11,6 @@ gem 'bootstrap-sass', '~> 3.0.3.0'
 gem 'devise', '~> 3.2.2'
 gem 'geocoder'
 
-
 group :development, :test do
      gem 'sqlite3'
 end

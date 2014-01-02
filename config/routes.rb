@@ -4,7 +4,8 @@ Pinteresting::Application.routes.draw do
   devise_for :users
   get "pages/git"
   get "pages/add"
-  root 'pages#home'
+  #root 'pages#home'
+  root 'adresses#index'
   get 'ueber' => 'pages#ueber'
   
   # The priority is based upon order of creation: first created -> highest priority.
