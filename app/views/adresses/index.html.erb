@@ -1,6 +1,8 @@
-<h1>Location-Übersicht</h1>
-
-<table>
+<div class="jumbotron">
+  <h1>Location-Übersicht</h1>
+<br>
+<p>
+  <table class="table">
   <thead>
     <tr>
       <th>Strasse</th>
@@ -31,7 +33,9 @@
     <% end %>
   </tbody>
 </table>
+</p>
 
 <br>
 
-<%= link_to 'New Adresse', new_adress_path %>
+<%= link_to 'Neue Location anlegen', new_adress_path, class:"btn btn-primary     btn-lg"  %>
+</div>

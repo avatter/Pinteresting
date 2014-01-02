@@ -3,8 +3,11 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h1>Deine Location</h1>
+    <h3> <%= @adress.strasse %> <%= @adress.hausnummer %></h3>
   </div>
   <div class="panel-body">
+
+
 
 <p>
   <strong>Strasse:</strong>
@@ -41,10 +44,8 @@
 
 
 <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@adress.latitude}%2C#{@adress.longitude}", class: "img-rounded" %>
-<%= image_tag "http://maps.googleapis.com/maps/api/streetview?size=450x300&location=#{@adress.latitude}%2C#{@adress.longitude}&heading=235&sensor=false", class: "img-rounded"  %>
-
-<%= image_tag "http://maps.googleapis.com/maps/api/streetview?size=450x300&location=#{@adress.strasse}%2C#{@adress.hausnummer}%2C#{@adress.plz}&heading=235&sensor=false", class: "img-rounded"  %>
-
+<%= image_tag "http://maps.googleapis.com/maps/api/streetview?size=450x300&location=#{@adress.strasse}%2C#{@adress.hausnummer}%2C#{@adress.plz}&sensor=false", class: "img-rounded"  %>
+</p>
 
 
 
@@ -55,10 +56,10 @@
  <div class="panel-footer">
 
 <%= link_to edit_adress_path(@adress) do %> 
-<span class="glyphicon glyphicon-edit">            <% end %>
+<span class="glyphicon glyphicon-edit"> Bearbeiten           <% end %>
 
 |
-<%= link_to 'Back', adresses_path %>
+<%= link_to 'Zurück', adresses_path %>
 
   </div>
 </div>
