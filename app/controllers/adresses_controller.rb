@@ -71,11 +71,28 @@ before_action :authenticate_user!, except: [:index, :show]
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_adress
       @adress = Adresse.find(params[:id])
     end
+
+#funktioniert nicht
+    #def correct_user
+    #  @adress = current_user.Adresses.find_by(id: adress_params[:id])
+    #  redirect_to @adress, notice: "Not authorized to edit this pin" if @adresse.nil?
+   # end
+
+
+#omr vorgabe
+ #def correct_user
+  #    @pin = current_user.pins.find_by(id: params[:id])
+   #   redirect_to pins_path, notice: "Not authorized to edit this pin" if @pin.nil?
+    #end
+
+
+
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def adress_params

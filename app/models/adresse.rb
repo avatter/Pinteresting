@@ -1,5 +1,4 @@
 class Adresse < ActiveRecord::Base
-	
 	geocoded_by :adresse
 
 def adresse

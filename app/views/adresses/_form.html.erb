@@ -1,3 +1,4 @@
+
 <div class="panel panel-default">
   <div class="panel-heading">
 <h1>Lege deine Location an</h1>
@@ -7,7 +8,6 @@
   <% if @adress.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@adress.errors.count, "error") %> prohibited this adress from being saved:</h2>
-
       <ul>
       <% @adress.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -15,24 +15,25 @@
       </ul>
     </div>
   <% end %>
+
       <div class="form-group">
         <%= f.label :strasse %>
-        <%= f.text_field :strasse, autofocus: true, class: "form-control" %>
+        <%= f.text_field :strasse, autofocus: true, type: "text", placeholder: "Deine Straße", class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :hausnummer %>
-        <%= f.text_field :hausnummer, class: "form-control" %>
+        <%= f.text_field :hausnummer, type: "text", placeholder: "Deine Hausnummer", class: "form-control" %>
       </div>
 
        <div class="form-group">
         <%= f.label :Postleitzahl %>
-        <%= f.text_field :plz, class: "form-control" %>
+        <%= f.text_field :plz, type: "number", placeholder: "Deine Postleitzahl", class: "form-control" %>
       </div>
 
        <div class="form-group">
         <%= f.label :Stadt %>
-        <%= f.text_field :stadt, class: "form-control" %>
+        <%= f.text_field :stadt, type: "text", placeholder: "Deine Stadt", class: "form-control" %>
       </div>
 
       <div class="actions">
