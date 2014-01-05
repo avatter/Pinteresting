@@ -7,7 +7,7 @@
  <%= form_for(@adress) do |f| %>
   <% if @adress.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@adress.errors.count, "error") %> prohibited this adress from being saved:</h2>
+      <h4>Whoops! <%= @adress.errors.count %> Fehler haben das Speichern verhindert. </h4>
       <ul>
       <% @adress.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -28,7 +28,7 @@
 
        <div class="form-group">
         <%= f.label :Postleitzahl %>
-        <%= f.text_field :plz, type: "number", placeholder: "Deine Postleitzahl", class: "form-control" %>
+        <%= f.text_field :plz, type: "text", placeholder: "Deine Postleitzahl", class: "form-control" %>
       </div>
 
        <div class="form-group">
@@ -36,14 +36,28 @@
         <%= f.text_field :stadt, type: "text", placeholder: "Deine Stadt", class: "form-control" %>
       </div>
 
+  
+
+      <div class="actions">
+    <%= f.submit "Location erstellen", class: "btn btn-primary" %>
+      </div>
+
+
+
+
+      <!--  
+
       <div class="actions">
     <%= f.submit %>
-      </div>
+     </div>
+
+-->
+
     <% end %>
   </div>
 
   <div class="panel-footer">
-<%= link_to 'Back', adresses_path %>  
+<%= link_to 'Zurück', adresses_path %>  
 </div>
 </div>
 
