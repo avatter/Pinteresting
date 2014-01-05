@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :adresse
+#attr_accessible :vorname, :nachname
 end
 
 

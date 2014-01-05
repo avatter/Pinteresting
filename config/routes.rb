@@ -2,10 +2,11 @@ Pinteresting::Application.routes.draw do
   resources :adresses
 
   devise_for :users
+  root 'adresses#index'
   get "pages/git"
   get "pages/add"
   #root 'pages#home'
-  root 'adresses#index'
+  #root 'adresses#index'
   get 'ueber' => 'pages#ueber'
   
   # The priority is based upon order of creation: first created -> highest priority.
